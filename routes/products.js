@@ -4,7 +4,7 @@ const controller = require('../controllers/products_controllers');
 const {body} = require('express-validator/check');
 const isAuth = require('../middleware/is_auth');
 //GET/products/shop/shopId
-router.get('/shop/:shopId',controller.getProductByShop);
+
 //POST/products/addProduct
 router.post('/addProduct',isAuth,[
     body('title').trim().isLength({min : 5}).withMessage('title should have more than 5 cahracters'),
