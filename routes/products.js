@@ -16,5 +16,6 @@ router.post('/addProduct',isAuth,[
 router.get('/',controller.getProducts);
 //GET/products/productById/:productId
 router.get('/productById/:productId',isAuth,controller.getProductById);
+//GET/products/productByShop/:shopId
 
 module.exports = router;
