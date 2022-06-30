@@ -2,15 +2,8 @@ const Product = require('../models/product');
 const { post } = require('../routes/shops');
 const {validationResult} = require('express-validator/check');
 
-exports.addProduct = (req,res,next) => {
-    const errors = validationResult(req);
-    if(!errors.isEmpty()){
-        const error = new Error(errors.array()[0].msg);
-        error.statusCode = 422;
-        throw error;
-    }
-    const addedProduct = new Product({
-       
+exports.addProduct = (req,res,next) => {   
+    const addedProduct = new Product({  
         imageUrl : req.body.imageUrl,
         title : req.body.title,
         price : req.body.price, 
